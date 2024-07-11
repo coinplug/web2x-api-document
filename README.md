@@ -10,7 +10,7 @@ WEB2X API는 Web2 개발자가 Web3 기술을 쉽게 사용할 수 있도록 도
 
 2. API 신청
 
-   1. www.web2x.io에서 ‘로그인' 버튼을 클릭하여, 회원가입과 로그인을 진행합니다.
+   1. www.web2x.io 에서 ‘로그인' 버튼을 클릭하여, 회원가입과 로그인을 진행합니다.
       ![](https://github.com/coinplug/web2x-api-document/raw/master/images/1-2-1.png)
    2. ‘프로젝트' 메뉴를 클릭합니다.
       ![](https://github.com/coinplug/web2x-api-document/raw/master/images/1-2-2.png)
