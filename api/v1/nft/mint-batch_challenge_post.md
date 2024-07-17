@@ -7,12 +7,18 @@ NFT 대량발행을 위해 필요한 데이터(발행수량, 수신자 지갑 id
 
   ```plaintext
   {
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “status”: “SUCCESS”,
-      “reason”: “”,
-      “results”: {
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”
-      }
+    "request_id": "c5f76b60-34f5-476b-ad9e-b15f29bff67b",
+    "status": "COMPLETE",
+    "results": {
+      "token_ids": [
+        14,
+        13
+      ],
+      "transaction_hash": "0xd7a3c99b746cf54ef61167f6304ac2fde785596df1519aa90a810e6316171207",
+      "transaction_gas_used": 384141,
+      "requested_at": "2024-07-16T23:15:42+09:00",
+      "finished_at": "2024-07-17T08:15:46+09:00"
+    }
   }
   ```
 </details>
@@ -22,13 +28,19 @@ NFT 대량발행을 위해 필요한 데이터(발행수량, 수신자 지갑 id
 
   ```plaintext
   {
-      “code”: “20000”,
-      “message”: “SUCCESS”,
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “results”: {
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”,
-            “requested_at”: “2024-04-19T02:16:44.53415005Z”,
-            “finished_at”: “2024-04-19T02:16:44.53415005Z”
+      "code": "20000",
+      "message": "SUCCESS",
+      "request_id": "c5f76b60-34f5-476b-ad9e-b15f29bff67b",
+      "status": "COMPLETE",
+      "results": {
+          "token_ids": [
+              14,
+              13
+          ],
+          "transaction_hash": "0xd7a3c99b746cf54ef61167f6304ac2fde785596df1519aa90a810e6316171207",
+          "transaction_gas_used": 384141,
+          "requested_at": "2024-07-16T23:15:42+09:00",
+          "finished_at": "2024-07-17T08:15:46+09:00"
       }
   }
   ```

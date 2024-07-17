@@ -11,22 +11,24 @@
   ```plaintext
   # wallet_id 필드는 생성된 지갑의 식별자이며 지갑을 사용하는 API에서 필요합니다. 
   {
-      "request_id": "21c6c1c4-ca95-4144-9bc3-0d44456d3243",
-      "status": "SUCCESS",
-      "reason": "",
-      "results": {
-            "wallet": {
-                "wallet_id": "12c6c1c4-ca95-4144-9bc3-0d44456d3243",
-                "wallet_name": "홍길동지갑1",
-                "address": "0x11",
-                "network_chain_id": 11,
-                "auth_type": "eoa",
-                "sig_public_key": "0x13…",
-                "mng_public_key": "0x14…",
-                "created_at": "2024-04-19T02:16:44.53415005Z"
-            },
-            "transaction_hash": "0xbd0c8192a39a70525e4b243f67d31c9656bb…"
-      }
+    "request_id": "5fc9682d-7b21-448e-9c62-286b266e7e9b"
+    "status": "COMPLETE",
+    "results": {
+      "wallet": {
+        "wallet_id": "31b8b3e2-9ebb-41a8-a7d5-9dda28e249d5",
+        "wallet_name": "hong-gil-dong",
+        "wallet_address": "0x300209c94eb01e9a27b053a41586de71225377be",
+        "network_chain_id": 12,
+        "auth_type": "eoakey",
+        "sig_public_key": "0x44b59a2101ef56ae6f618602255f8b147568332c53262b5f02f359c87709649e478929d74a73ca2007d9f0e55106f39ad2507859ccc15413cb48e83fd57b0950",
+        "mng_public_key": "0xc2962fbe6af1540896ccd7ba816a52ebc1d7d4fa1df2b1745e27b257b0023f0a1d5ff0ca8fd6378e5bf5a50597f23dbea8773775f452178793f534a731578606",
+        "created_at": "2024-07-16T07:30:24+09:00"
+      },
+      "transaction_hash": "0x871721b6e08645a40dc3ce2a625bafa039cf5ed64c65124c71cbbbc2c05aa02d",
+      "transaction_gas_used": 2347335,
+      "requested_at": "2024-07-16T07:30:24+09:00"
+      "finished_at": "2024-07-16T16:30:26+09:00",
+    },
   }
   ```
 </details>
@@ -39,21 +41,23 @@
   {
       "code": "20000",
       "message": "SUCCESS",
-      "request_id": "21c6c1c4-ca95-4144-9bc3-0d44456d3243",
+      "request_id": "5fc9682d-7b21-448e-9c62-286b266e7e9b",
+      "status": "COMPLETE",
       "results": {
-            "wallet": {
-                "wallet_id": "12c6c1c4-ca95-4144-9bc3-0d44456d3243",
-                "wallet_name": "홍길동지갑1",
-                "address": "0x11",
-                "network_chain_id": 11,
-                "auth_type": "eoa",
-                "sig_public_key": "0x13…",
-                "mng_public_key": "0x14…",
-                "created_at": "2024-04-19T02:16:44.53415005Z"
-            },
-            "transaction_hash": "0xbd0c8192a39a70525e4b243f67d31c9656bb…"
-            "requested_at": "2024-04-19T02:16:44.53415005Z",
-            "finished_at": "2024-04-19T02:16:44.53415005Z" 
+          "wallet": {
+              "wallet_id": "31b8b3e2-9ebb-41a8-a7d5-9dda28e249d5",
+              "wallet_name": "dev-test-0716",
+              "wallet_address": "0x300209c94eb01e9a27b053a41586de71225377be",
+              "network_chain_id": 12,
+              "auth_type": "eoakey",
+              "sig_public_key": "0x44b59a2101ef56ae6f618602255f8b147568332c53262b5f02f359c87709649e478929d74a73ca2007d9f0e55106f39ad2507859ccc15413cb48e83fd57b0950",
+              "mng_public_key": "0xc2962fbe6af1540896ccd7ba816a52ebc1d7d4fa1df2b1745e27b257b0023f0a1d5ff0ca8fd6378e5bf5a50597f23dbea8773775f452178793f534a731578606",
+              "created_at": "2024-07-16T07:30:24+09:00"
+          },
+          "transaction_hash": "0x871721b6e08645a40dc3ce2a625bafa039cf5ed64c65124c71cbbbc2c05aa02d",
+          "transaction_gas_used": 2347335,
+          "requested_at": "2024-07-16T07:30:24+09:00"
+          "finished_at": "2024-07-16T16:30:27+09:00",
       }
   }
   ```

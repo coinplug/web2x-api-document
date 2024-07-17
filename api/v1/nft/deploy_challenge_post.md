@@ -10,22 +10,24 @@ NFT 템플릿 배포*를 위해 필요한 데이터(이름, 심볼, 오너주소
   ```plaintext
   # contract_id 필드는 배포된 NFT 컨트랙트의 식별자이며 컨트랙트를 사용하는 API에서 필요합니다. 
   {
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “status”: “SUCCESS”,
-      “reason”: “”,
-      “results”: {
-            "contract": {
-                “contract_id”: “93462407-7410-44f3-bbb4-648f1d732fa0”,
-                "network_chain_id": 11,
-                "contract_address": "0x379A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "owner_address": "0x579A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "name": "WEB2X NFT",
-                "symbol": "W2NFT",
-                "is_burnable": true,
-                “ids” : [1, 2, 3, 4]
-            },
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”
-      }
+    "request_id": "d6721761-88eb-4c03-ab87-6a9dd3110793",
+    "status": "COMPLETE",
+    "results": {
+      "contract": {
+        "symbol": "TEST",
+        "network_chain_id": 12,
+        "contract_id": "c5ee0db0-4ce8-4219-befb-0b808afb41a9",
+        "name": "TEST",
+        "ids": [],
+        "owner_address": "0x1214Ae02C495E96Fd102705FA3c00721fbD52BC9",
+        "contract_address": "0xe83687e545bbf90ce8b9507504460b8e85a737b7",
+        "is_burnable": true
+      },
+      "transaction_hash": "0xa07dc6dae156eada4c7417cad2fde60e08323a2f12c3cc0215dc81ceb1bc4d23",
+      "transaction_gas_used": 3083774,
+      "requested_at": "2024-07-16T23:44:01+09:00",
+      "finished_at": "2024-07-17T08:44:06+09:00"
+    }
   }
   ```
 </details>
@@ -36,23 +38,25 @@ NFT 템플릿 배포*를 위해 필요한 데이터(이름, 심볼, 오너주소
   ```plaintext
   # contract_id 필드는 배포된 NFT 컨트랙트의 식별자이며 컨트랙트를 사용하는 API에서 필요합니다. 
   {
-      “code”: “20000”,
-      “message”: “SUCCESS”,
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “results”: {
-            "contract": {
-                “contract_id”: “93462407-7410-44f3-bbb4-648f1d732fa0”,
-                "network_chain_id": 11,
-                "contract_address": "0x379A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "owner_address": "0x579A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "name": "WEB2X NFT",
-                "symbol": "W2NFT",
-                "is_burnable": true,
-                “ids” : [1, 2, 3, 4]
-            },
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”
-            “requested_at”: “2024-04-19T02:16:44.53415005Z”,
-            “finished_at”: “2024-04-19T02:16:44.53415005Z”
+      "code": "20000",
+      "message": "SUCCESS",
+      "request_id": "d6721761-88eb-4c03-ab87-6a9dd3110793",
+      "status": "COMPLETE",
+      "results": {
+          "contract": {
+              "symbol": "TEST",
+              "network_chain_id": 12,
+              "contract_id": "c5ee0db0-4ce8-4219-befb-0b808afb41a9",
+              "name": "TEST",
+              "ids": [],
+              "owner_address": "0x1214Ae02C495E96Fd102705FA3c00721fbD52BC9",
+              "contract_address": "0xe83687e545bbf90ce8b9507504460b8e85a737b7",
+              "is_burnable": true
+          },
+          "transaction_hash": "0xa07dc6dae156eada4c7417cad2fde60e08323a2f12c3cc0215dc81ceb1bc4d23",
+          "transaction_gas_used": 3083774,
+          "requested_at": "2024-07-16T23:44:01+09:00",
+          "finished_at": "2024-07-17T08:44:06+09:00"
       }
   }
   ```

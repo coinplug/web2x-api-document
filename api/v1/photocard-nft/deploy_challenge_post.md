@@ -11,22 +11,24 @@
   ```plaintext
   # contract_id 필드는 배포된 NFT 컨트랙트의 식별자이며 컨트랙트를 사용하는 API에서 필요합니다. 
   {
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “status”: “SUCCESS”,
-      “reason”: “”,
-      “results”: {
-            "contract": {
-                “contract_id”: “93462407-7410-44f3-bbb4-648f1d732fa0”,
-                "network_chain_id": 11,
-                "contract_address": "0x379A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "owner_address": "0x579A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "name": "WEB2X NFT",
-                "symbol": "W2NFT",
-                "is_burnable": true,
-                “ids” : [1, 2, 3, 4]
-            },
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”
-      }
+    "request_id": "52e657ee-cc9b-4b7f-b5e7-2e05477ecbaa",
+    "status": "COMPLETE",
+    "results": {
+      "contract": {
+        "symbol": "PHOTOCARD",
+        "network_chain_id": 12,
+        "contract_id": "b658c99f-3e44-46c9-8a29-71caa9711e65",
+        "name": "PHOTOCARD",
+        "ids": [],
+        "owner_address": "0x1214Ae02C495E96Fd102705FA3c00721fbD52BC9",
+        "contract_address": "0x3bfd79fe7a70f24d0ed5e38c1f7e10da76896cdb",
+        "is_burnable": false
+      },
+      "transaction_hash": "0x7442ed2bbf599c9ad8391ca08330ade641308c07d6445e498f38479364ae6610",
+      "transaction_gas_used": 2241774,
+      "requested_at": "2024-07-16T23:51:48+09:00",
+      "finished_at": "2024-07-17T08:51:50+09:00"
+    }
   }
   ```
 </details>
@@ -37,24 +39,26 @@
   ```plaintext
   # contract_id 필드는 배포된 NFT 컨트랙트의 식별자이며 컨트랙트를 사용하는 API에서 필요합니다. 
   {
-      “code”: “20000”,
-      “message”: “SUCCESS”,
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “results”: {
-            "contract": {
-                “contract_id”: “93462407-7410-44f3-bbb4-648f1d732fa0”,
-                "network_chain_id": 11,
-                "contract_address": "0x379A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "owner_address": "0x579A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "name": "WEB2X NFT",
-                "symbol": "W2NFT",
-                "is_burnable": true,
-                “ids” : [1, 2, 3, 4]
-            },
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”
-            “requested_at”: “2024-04-19T02:16:44.53415005Z”,
-            “finished_at”: “2024-04-19T02:16:44.53415005Z”
+      "code": "20000",
+      "message": "SUCCESS",
+      "request_id": "52e657ee-cc9b-4b7f-b5e7-2e05477ecbaa",
+      "status": "COMPLETE",
+      "results": {
+          "contract": {
+              "symbol": "PHOTOCARD",
+              "network_chain_id": 12,
+              "contract_id": "b658c99f-3e44-46c9-8a29-71caa9711e65",
+              "name": "PHOTOCARD",
+              "ids": [],
+              "owner_address": "0x1214Ae02C495E96Fd102705FA3c00721fbD52BC9",
+              "contract_address": "0x3bfd79fe7a70f24d0ed5e38c1f7e10da76896cdb",
+              "is_burnable": false
+          },
+          "transaction_hash": "0x7442ed2bbf599c9ad8391ca08330ade641308c07d6445e498f38479364ae6610",
+          "transaction_gas_used": 2241774,
+          "requested_at": "2024-07-16T23:51:48+09:00",
+          "finished_at": "2024-07-17T08:51:50+09:00"
       }
-  }          
+  }         
   ```
 </details>

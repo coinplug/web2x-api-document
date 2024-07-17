@@ -12,22 +12,24 @@
   ```plaintext
   # contract_id 필드는 배포된 NFT 컨트랙트의 식별자이며 컨트랙트를 사용하는 API에서 필요합니다. 
   {
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “status”: “SUCCESS”,
-      “reason”: “”,
-      “results”: {
-            "contract": {
-                “contract_id”: “93462407-7410-44f3-bbb4-648f1d732fa0”,
-                "network_chain_id": 11,
-                "contract_address": "0x379A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "owner_address": "0x579A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "name": "WEB2X NFT",
-                "symbol": "W2NFT",
-                "is_burnable": true,
-                “ids” : [1, 2, 3, 4]
-            },
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”
-      }
+    "request_id": "e63623c7-3082-4d1b-9756-6bfdd23bb325"
+    "status": "COMPLETE",
+    "results": {
+      "contract": {
+        "symbol": "YYFT",
+        "network_chain_id": 12,
+        "contract_id": "4f805512-e56d-41fe-b107-8929d5835f36",
+        "name": "YYFT",
+        "ids": [],
+        "owner_address": "0x1214Ae02C495E96Fd102705FA3c00721fbD52BC9",
+        "contract_address": "0xe62dcfefa9ec4304d1307b125725116ba9d06787",
+        "is_burnable": true
+      },
+      "transaction_hash": "0x383d3b710c9ef94f25471f54db488e0687275f9abae75e3079b5179533ef86d3",
+      "transaction_gas_used": 2210130,
+      "requested_at": "2024-07-16T23:49:43+09:00",
+      "finished_at": "2024-07-17T08:49:48+09:00"
+    }
   }
   ```
 </details>
@@ -38,23 +40,25 @@
   ```plaintext
   # contract_id 필드는 배포된 NFT 컨트랙트의 식별자이며 컨트랙트를 사용하는 API에서 필요합니다. 
   {
-      “code”: “20000”,
-      “message”: “SUCCESS”,
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “results”: {
-            "contract": {
-                “contract_id”: “93462407-7410-44f3-bbb4-648f1d732fa0”,
-                "network_chain_id": 11,
-                "contract_address": "0x379A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "owner_address": "0x579A77AD8c89b5d1366e77D1f3a168706A9e287e",
-                "name": "WEB2X NFT",
-                "symbol": "W2NFT",
-                "is_burnable": true,
-                “ids” : [1, 2, 3, 4]
-            },
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”
-            “requested_at”: “2024-04-19T02:16:44.53415005Z”,
-            “finished_at”: “2024-04-19T02:16:44.53415005Z”
+      "code": "20000",
+      "message": "SUCCESS",
+      "request_id": "e63623c7-3082-4d1b-9756-6bfdd23bb325",
+      "status": "COMPLETE",
+      "results": {
+          "contract": {
+              "symbol": "YYFT",
+              "network_chain_id": 12,
+              "contract_id": "4f805512-e56d-41fe-b107-8929d5835f36",
+              "name": "YYFT",
+              "ids": [],
+              "owner_address": "0x1214Ae02C495E96Fd102705FA3c00721fbD52BC9",
+              "contract_address": "0xe62dcfefa9ec4304d1307b125725116ba9d06787",
+              "is_burnable": true
+          },
+          "transaction_hash": "0x383d3b710c9ef94f25471f54db488e0687275f9abae75e3079b5179533ef86d3",
+          "transaction_gas_used": 2210130,
+          "requested_at": "2024-07-16T23:49:43+09:00",
+          "finished_at": "2024-07-17T08:49:48+09:00"
       }
   }
   ```

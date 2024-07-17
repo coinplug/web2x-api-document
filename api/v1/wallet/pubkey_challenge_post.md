@@ -11,12 +11,14 @@
 
   ```plaintext
   {
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “status”: “SUCCESS”,
-      “reason”: “”,
-      “results”: {
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”
-      }
+    "request_id": "58073f05-cd11-483a-87b2-cc77156980ef",
+    "status": "COMPLETE",
+    "results": {
+      "transaction_hash": "0xc8c2b85ece5d0f0f5e371b21fa799a40d6cf2e78de2aa91e716c4d544b2ce0aa",
+      "transaction_gas_used": 112484,
+      "requested_at": "2024-07-16T23:40:14+09:00",
+      "finished_at": "2024-07-17T08:40:19+09:00"
+    }
   }
   ```
 </details>
@@ -26,13 +28,15 @@
 
   ```plaintext
   {
-      “code”: “20000”,
-      “message”: “SUCCESS”,
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “results”: {
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”,
-            “requested_at”: “2024-04-19T02:16:44.53415005Z”,
-            “finished_at”: “2024-04-19T02:16:44.53415005Z”
+      "code": "20000",
+      "message": "SUCCESS",
+      "request_id": "58073f05-cd11-483a-87b2-cc77156980ef",
+      "status": "COMPLETE",
+      "results": {
+          "transaction_hash": "0xc8c2b85ece5d0f0f5e371b21fa799a40d6cf2e78de2aa91e716c4d544b2ce0aa",
+          "transaction_gas_used": 112484,
+          "requested_at": "2024-07-16T23:40:14+09:00",
+          "finished_at": "2024-07-17T08:40:19+09:00"
       }
   }
   ```

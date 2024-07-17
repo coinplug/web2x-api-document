@@ -7,12 +7,14 @@ NFT 대리전송을 위해 필요한 데이터(전송할 토큰 id, 토큰오너
 
   ```plaintext
   {
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “status”: “SUCCESS”,
-      “reason”: “”,
-      “results”: {
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”
-      }
+    "request_id": "5a52468e-c98b-4ead-b02d-7c1b1b81a055",
+    "status": "COMPLETE",
+    "results": {
+      "transaction_hash": "0xa5f0c449d7de3e81af7c9892e3bb5c37a629f152cdf2ec439490464177f1b062",
+      "transaction_gas_used": 141605,
+      "requested_at": "2024-07-16T23:34:20+09:00",
+      "finished_at": "2024-07-17T08:34:24+09:00"
+    }
   }
   ```
 </details>
@@ -22,13 +24,15 @@ NFT 대리전송을 위해 필요한 데이터(전송할 토큰 id, 토큰오너
 
   ```plaintext
   {
-      “code”: “20000”,
-      “message”: “SUCCESS”,
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “results”: {
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”,
-            “requested_at”: “2024-04-19T02:16:44.53415005Z”,
-            “finished_at”: “2024-04-19T02:16:44.53415005Z”
+      "code": "20000",
+      "message": "SUCCESS",
+      "request_id": "5a52468e-c98b-4ead-b02d-7c1b1b81a055",
+      "status": "COMPLETE",
+      "results": {
+          "transaction_hash": "0xa5f0c449d7de3e81af7c9892e3bb5c37a629f152cdf2ec439490464177f1b062",
+          "transaction_gas_used": 141605,
+          "requested_at": "2024-07-16T23:34:20+09:00",
+          "finished_at": "2024-07-17T08:34:24+09:00"
       }
   }
   ```

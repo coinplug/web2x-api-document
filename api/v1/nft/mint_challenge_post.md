@@ -10,13 +10,15 @@ NFT 발행을 위해 필요한 데이터(토큰 데이터, 수신자 지갑 id �
   ```plaintext
   # token_id 필드는 발행된 NFT 토큰의 식별자이며 NFT 토큰을 사용하는 API에서 필요합니다. 
   {
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “status”: “SUCCESS”,
-      “reason”: “”,
-      “results”: {
-            “token_id”: 1,
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”
-      }
+    "request_id": "87e1afbe-9944-4733-a55b-07043cf7db42",
+    "status": "COMPLETE",
+    "results": {
+      "token_id": 12,
+      "transaction_hash": "0x78f4d7063397dd71639a7877876af7f161518679cb8f9df5ac75b1e3e37dac62",
+      "transaction_gas_used": 243122,
+      "requested_at": "2024-07-16T23:11:20+09:00",
+      "finished_at": "2024-07-17T08:11:24+09:00"
+    },
   }
   ```
 </details>
@@ -27,15 +29,17 @@ NFT 발행을 위해 필요한 데이터(토큰 데이터, 수신자 지갑 id �
   ```plaintext
   # token_id 필드는 발행된 NFT 토큰의 식별자이며 NFT 토큰을 사용하는 API에서 필요합니다. 
   {
-      “code”: “20000”,
-      “message”: “SUCCESS”,
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “results”: {
-            “token_id”: 1,
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”,
-            “requested_at”: “2024-04-19T02:16:44.53415005Z”,
-            “finished_at”: “2024-04-19T02:16:44.53415005Z”
-      }
+    "code": "20000",
+    "message": "SUCCESS",
+    "request_id": "87e1afbe-9944-4733-a55b-07043cf7db42",
+    "status": "COMPLETE",
+    "results": {
+      "token_id": 12,
+      "transaction_hash": "0x78f4d7063397dd71639a7877876af7f161518679cb8f9df5ac75b1e3e37dac62",
+      "transaction_gas_used": 243122,
+      "requested_at": "2024-07-16T23:11:20+09:00",
+      "finished_at": "2024-07-17T08:11:25+09:00"
+    }
   }
   ```
 </details>

@@ -6,12 +6,14 @@ NFT 위임을 위해 필요한 데이터(위임할 토큰 id, 위임받을 주�
 
   ```plaintext
   {
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “status”: “SUCCESS”,
-      “reason”: “”,
-      “results”: {
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”
-      }
+    "request_id": "ac7f1ec3-ae32-4cfd-9767-d10495f1ce9a"
+    "status": "COMPLETE",
+    "results": {
+      "transaction_hash": "0xf174631f476cfb63f49f945c70e8d1db0fce39e009fe226f41b3bbdf172a5cd5",
+      "transaction_gas_used": 118012,
+      "requested_at": "2024-07-16T23:31:29+09:00",
+      "finished_at": "2024-07-17T08:31:32+09:00"
+    }
   }
   ```
 </details>
@@ -21,13 +23,15 @@ NFT 위임을 위해 필요한 데이터(위임할 토큰 id, 위임받을 주�
 
   ```plaintext
   {
-      “code”: “20000”,
-      “message”: “SUCCESS”,
-      “request_id”: “21c6c1c4-ca95-4144-9bc3-0d44456d3243”,
-      “results”: {
-            “transaction_hash”: “0xbd0c8192a39a70525e4b243f67d31c9656bb…”,
-            “requested_at”: “2024-04-19T02:16:44.53415005Z”,
-            “finished_at”: “2024-04-19T02:16:44.53415005Z”
+      "code": "20000",
+      "message": "SUCCESS",
+      "request_id": "ac7f1ec3-ae32-4cfd-9767-d10495f1ce9a",
+      "status": "COMPLETE",
+      "results": {
+          "transaction_hash": "0xf174631f476cfb63f49f945c70e8d1db0fce39e009fe226f41b3bbdf172a5cd5",
+          "transaction_gas_used": 118012,
+          "requested_at": "2024-07-16T23:31:29+09:00",
+          "finished_at": "2024-07-17T08:31:33+09:00"
       }
   }
   ```
