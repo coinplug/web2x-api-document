@@ -368,6 +368,7 @@ WEB2X 플랫폼은 API를 통해 서비스 이용자의 요청을 받아 블록�
         "status": "FAILED",    // 요청 처리 실패
         "reason": "transaction is reverted",    // 실패 사유
         "results": {
+            // 실패로 인해 Revert 된 트랜잭션 정보
             "transaction_hash": "0x5d50abefc87f2e894a1b62e2ae8143800532d71f499c64c836c9b68f7f764b0f",
             "transaction_gas_used": 2426585,    // 실패에 소모된 Gas 
             "requested_at": "2024-07-16T23:58:57+09:00",
