@@ -6,35 +6,37 @@
 <details>
   <summary><b>Callback BODY 데이터 예시</b></summary>
 
-  ```plaintext
-  {
-    "request_id": "d0d197b8-1e69-4da6-9f0d-d4803b18ebd4",
-    "status": "COMPLETE",
-    "results": {
-      "transaction_hash": "0xc3e266f70b759feff43324882fbec3f9d0fd8c2e390a86bc6fa7b91530985a90",
-      "transaction_gas_used": 108496,
-      "requested_at": "2024-07-16T23:26:50+09:00",
-      "finished_at": "2024-07-17T08:26:53+09:00",
-    },
+```json
+{
+  "request_id": "d0d197b8-1e69-4da6-9f0d-d4803b18ebd4",
+  "status": "COMPLETE",
+  "results": {
+    "transaction_hash": "0xc3e266f70b759feff43324882fbec3f9d0fd8c2e390a86bc6fa7b91530985a90",
+    "transaction_gas_used": 108496,
+    "requested_at": "2024-07-16T23:26:50+09:00",
+    "finished_at": "2024-07-17T08:26:53+09:00"
   }
-  ```
+}
+```
+
 </details>
 
 <details>
   <summary><b>요청처리결과 조회 API 응답 데이터 예시</b></summary>
 
-  ```plaintext
-  {
-      "code": "20000",
-      "message": "SUCCESS",
-      "request_id": "d0d197b8-1e69-4da6-9f0d-d4803b18ebd4",
-      "status": "COMPLETE",
-      "results": {
-          "transaction_hash": "0xc3e266f70b759feff43324882fbec3f9d0fd8c2e390a86bc6fa7b91530985a90",
-          "transaction_gas_used": 108496,
-          "requested_at": "2024-07-16T23:26:50+09:00",
-          "finished_at": "2024-07-17T08:26:54+09:00"
-      }
+```json
+{
+  "code": "20000",
+  "message": "SUCCESS",
+  "request_id": "d0d197b8-1e69-4da6-9f0d-d4803b18ebd4",
+  "status": "COMPLETE",
+  "results": {
+    "transaction_hash": "0xc3e266f70b759feff43324882fbec3f9d0fd8c2e390a86bc6fa7b91530985a90",
+    "transaction_gas_used": 108496,
+    "requested_at": "2024-07-16T23:26:50+09:00",
+    "finished_at": "2024-07-17T08:26:54+09:00"
   }
-  ```
+}
+```
+
 </details>
