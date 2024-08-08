@@ -13,6 +13,7 @@ NFT 대리전송을 위해 필요한 데이터(전송할 토큰 id, 토큰오너
   "results": {
     "transaction_hash": "0xa5f0c449d7de3e81af7c9892e3bb5c37a629f152cdf2ec439490464177f1b062",
     "transaction_gas_used": 141605,
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T23:34:20+09:00",
     "finished_at": "2024-07-17T08:34:24+09:00"
   }
@@ -33,6 +34,7 @@ NFT 대리전송을 위해 필요한 데이터(전송할 토큰 id, 토큰오너
   "results": {
     "transaction_hash": "0xa5f0c449d7de3e81af7c9892e3bb5c37a629f152cdf2ec439490464177f1b062",
     "transaction_gas_used": 141605,
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T23:34:20+09:00",
     "finished_at": "2024-07-17T08:34:24+09:00"
   }

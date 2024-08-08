@@ -12,6 +12,7 @@ NFT 위임을 위해 필요한 데이터(위임할 토큰 id, 위임받을 주�
   "results": {
     "transaction_hash": "0xf174631f476cfb63f49f945c70e8d1db0fce39e009fe226f41b3bbdf172a5cd5",
     "transaction_gas_used": 118012,
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T23:31:29+09:00",
     "finished_at": "2024-07-17T08:31:32+09:00"
   }
@@ -32,6 +33,7 @@ NFT 위임을 위해 필요한 데이터(위임할 토큰 id, 위임받을 주�
   "results": {
     "transaction_hash": "0xf174631f476cfb63f49f945c70e8d1db0fce39e009fe226f41b3bbdf172a5cd5",
     "transaction_gas_used": 118012,
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T23:31:29+09:00",
     "finished_at": "2024-07-17T08:31:33+09:00"
   }

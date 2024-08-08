@@ -27,6 +27,7 @@ NFT 템플릿 배포\*를 위해 필요한 데이터(이름, 심볼, 오너주�
     },
     "transaction_hash": "0xa07dc6dae156eada4c7417cad2fde60e08323a2f12c3cc0215dc81ceb1bc4d23",
     "transaction_gas_used": 3083774,
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T23:44:01+09:00",
     "finished_at": "2024-07-17T08:44:06+09:00"
   }
@@ -58,6 +59,7 @@ NFT 템플릿 배포\*를 위해 필요한 데이터(이름, 심볼, 오너주�
         },
         "transaction_hash": "0xa07dc6dae156eada4c7417cad2fde60e08323a2f12c3cc0215dc81ceb1bc4d23",
         "transaction_gas_used": 3083774,
+        "transaction_fee": "0.239949336000000000",
         "requested_at": "2024-07-16T23:44:01+09:00",
         "finished_at": "2024-07-17T08:44:06+09:00"
     }

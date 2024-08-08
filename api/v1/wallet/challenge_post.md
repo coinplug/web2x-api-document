@@ -26,6 +26,7 @@
     },
     "transaction_hash": "0x871721b6e08645a40dc3ce2a625bafa039cf5ed64c65124c71cbbbc2c05aa02d",
     "transaction_gas_used": 2347335,
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T07:30:24+09:00"
     "finished_at": "2024-07-16T16:30:26+09:00",
   },
@@ -57,6 +58,7 @@
         },
         "transaction_hash": "0x871721b6e08645a40dc3ce2a625bafa039cf5ed64c65124c71cbbbc2c05aa02d",
         "transaction_gas_used": 2347335,
+        "transaction_fee": "0.239949336000000000",
         "requested_at": "2024-07-16T07:30:24+09:00"
         "finished_at": "2024-07-16T16:30:27+09:00",
     }

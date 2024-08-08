@@ -16,6 +16,7 @@
     "token_id": 12,
     "transaction_hash": "0x78f4d7063397dd71639a7877876af7f161518679cb8f9df5ac75b1e3e37dac62",
     "transaction_gas_used": 243122,
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T23:11:20+09:00",
     "finished_at": "2024-07-17T08:11:24+09:00"
   },
@@ -33,11 +34,12 @@
   "code": "20000",
   "message": "SUCCESS",
   "request_id": "87e1afbe-9944-4733-a55b-07043cf7db42",
-  "status": ""COMPLETE"",
+  "status": "COMPLETE",
   "results": {
-    "token_id"": 12,
+    "token_id": 12,
     "transaction_hash": "0x78f4d7063397dd71639a7877876af7f161518679cb8f9df5ac75b1e3e37dac62",
     "transaction_gas_used": 243122,
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T23:11:20+09:00",
     "finished_at": "2024-07-17T08:11:25+09:00"
   }

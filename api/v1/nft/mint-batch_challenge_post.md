@@ -14,6 +14,7 @@ NFT 대량발행을 위해 필요한 데이터(발행수량, 수신자 지갑 id
     "token_ids": [14, 13],
     "transaction_hash": "0xd7a3c99b746cf54ef61167f6304ac2fde785596df1519aa90a810e6316171207",
     "transaction_gas_used": 384141,
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T23:15:42+09:00",
     "finished_at": "2024-07-17T08:15:46+09:00"
   }
@@ -35,6 +36,7 @@ NFT 대량발행을 위해 필요한 데이터(발행수량, 수신자 지갑 id
     "token_ids": [14, 13],
     "transaction_hash": "0xd7a3c99b746cf54ef61167f6304ac2fde785596df1519aa90a810e6316171207",
     "transaction_gas_used": 384141,
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T23:15:42+09:00",
     "finished_at": "2024-07-17T08:15:46+09:00"
   }
