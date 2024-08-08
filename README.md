@@ -319,6 +319,7 @@ API 호출 방식과 콜백 방식으로 모두 제공합니다.
        "results": {
          "transaction_hash": "0xf174631f476cfb63f49f945c70e8d1db0fce39e009fe226f41b3bbdf172a5cd5",
          "transaction_gas_used": 118012,
+         "transaction_fee": "0.239949336000000000",
          "requested_at": "2024-07-17T08:31:23+09:00",
          "finished_at": "2024-07-17T08:31:33+09:00"
        }
@@ -368,6 +369,7 @@ API 호출 방식과 콜백 방식으로 모두 제공합니다.
          // 실패로 인해 Revert 된 트랜잭션 정보
          "transaction_hash": "0x5d50abefc87f2e894a1b62e2ae8143800532d71f499c64c836c9b68f7f764b0f",
          "transaction_gas_used": 2426585, // 실패에 소모된 Gas
+         "transaction_fee": "0.239949336000000000",
          "requested_at": "2024-07-17T08:31:23+09:00",
          "finished_at": "2024-07-17T08:31:33+09:00"
        }
@@ -396,6 +398,7 @@ API 호출 방식과 콜백 방식으로 모두 제공합니다.
        "results": {
          "transaction_hash": "0xf174631f476cfb63f49f945c70e8d1db0fce39e009fe226f41b3bbdf172a5cd5",
          "transaction_gas_used": 118012,
+         "transaction_fee": "0.239949336000000000",
          "requested_at": "2024-07-16T23:31:29+09:00",
          "finished_at": "2024-07-17T08:31:33+09:00"
        }
@@ -427,6 +430,7 @@ API 호출 방식과 콜백 방식으로 모두 제공합니다.
          // 실패로 인해 Revert 된 트랜잭션 정보
          "transaction_hash": "0x5d50abefc87f2e894a1b62e2ae8143800532d71f499c64c836c9b68f7f764b0f",
          "transaction_gas_used": 2426585, // 실패에 소모된 Gas
+         "transaction_fee": "0.239949336000000000",
          "requested_at": "2024-07-16T23:58:57+09:00",
          "finished_at": "2024-07-17T08:59:02+09:00"
        }
