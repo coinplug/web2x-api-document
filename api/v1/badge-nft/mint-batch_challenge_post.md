@@ -8,7 +8,7 @@
   <summary><b>Callback BODY 데이터 예시</b></summary>
 
 ```json
-# token_ids 필드는 발행된 NFT 토큰의 식별자이며 NFT 토큰을 사용하는 API에서 필요합니다. 
+# token_ids 필드는 발행된 NFT 토큰의 식별자이며 NFT 토큰을 사용하는 API에서 필요합니다. 
 {
   "request_id": "c5f76b60-34f5-476b-ad9e-b15f29bff67b",
   "status": "COMPLETE",
@@ -33,7 +33,6 @@
 
 ```json
 # token_ids 필드는 발행된 NFT 토큰의 식별자이며 NFT 토큰을 사용하는 API에서 필요합니다.
-# token_ids 필드는 발행된 NFT 토큰의 식별자이며 NFT 토큰을 사용하는 API에서 필요합니다. 
 {
     "code": "20000",
     "message": "SUCCESS",
