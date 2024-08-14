@@ -17,7 +17,7 @@
   "status": "COMPLETE",
   "results": {
     "contract": {
-      "symbol": "MEMBERSHIP",
+      "symbol": "MEMBERSHIP",
       "network_chain_id": 12,
       "contract_id": "b658c99f-3e44-46c9-8a29-71caa9711e65",
       "name": "MEMBERSHIP",
