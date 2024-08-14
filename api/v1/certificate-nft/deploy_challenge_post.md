@@ -17,7 +17,7 @@
   "status": "COMPLETE",
   "results": {
     "contract": {
-      "symbol": "CERTIFICATE",
+      "symbol": "CERTIFICATE",
       "network_chain_id": 12,
       "contract_id": "b658c99f-3e44-46c9-8a29-71caa9711e65",
       "name": "CERTIFICATE",
@@ -28,7 +28,7 @@
     },
     "transaction_hash": "0x7442ed2bbf599c9ad8391ca08330ade641308c07d6445e498f38479364ae6610",
     "transaction_gas_used": 2241774,
-    “transaction_fee”: "0.239949336000000000",
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T23:51:48+09:00",
     "finished_at": "2024-07-17T08:51:50+09:00"
   }
@@ -60,7 +60,7 @@
         },
         "transaction_hash": "0x7442ed2bbf599c9ad8391ca08330ade641308c07d6445e498f38479364ae6610",
         "transaction_gas_used": 2241774,
-        “transaction_fee”: "0.239949336000000000",
+        "transaction_fee": "0.239949336000000000",
         "requested_at": "2024-07-16T23:51:48+09:00",
         "finished_at": "2024-07-17T08:51:50+09:00"
     }
