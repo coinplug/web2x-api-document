@@ -8,7 +8,7 @@
   <summary><b>Callback BODY 데이터 예시</b></summary>
 
 ```json
-# token_ids 필드는 발행된 NFT 토큰의 식별자이며 NFT 토큰을 사용하는 API에서 필요합니다. 
+# token_ids 필드는 발행된 NFT 토큰의 식별자이며 NFT 토큰을 사용하는 API에서 필요합니다. 
 {
   "request_id": "c5f76b60-34f5-476b-ad9e-b15f29bff67b",
   "status": "COMPLETE",
@@ -19,7 +19,7 @@
     ],
     "transaction_hash": "0xd7a3c99b746cf54ef61167f6304ac2fde785596df1519aa90a810e6316171207",
     "transaction_gas_used": 384141,
-    “transaction_fee”: "0.239949336000000000",
+    "transaction_fee": "0.239949336000000000",
     "requested_at": "2024-07-16T23:15:42+09:00",
     "finished_at": "2024-07-17T08:15:46+09:00"
   }
@@ -32,7 +32,7 @@
   <summary><b>요청처리결과 조회 API 응답 데이터 예시</b></summary>
 
 ```json
-# token_ids 필드는 발행된 NFT 토큰의 식별자이며 NFT 토큰을 사용하는 API에서 필요합니다. 
+# token_ids 필드는 발행된 NFT 토큰의 식별자이며 NFT 토큰을 사용하는 API에서 필요합니다. 
 {
     "code": "20000",
     "message": "SUCCESS",
@@ -45,7 +45,7 @@
         ],
         "transaction_hash": "0xd7a3c99b746cf54ef61167f6304ac2fde785596df1519aa90a810e6316171207",
         "transaction_gas_used": 384141,
-        “transaction_fee”: "0.239949336000000000",
+        "transaction_fee": "0.239949336000000000",
         "requested_at": "2024-07-16T23:15:42+09:00",
         "finished_at": "2024-07-17T08:15:46+09:00"
     }
