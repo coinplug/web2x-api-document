@@ -406,7 +406,7 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
    // 패스키 서명값 사용
    --data '{
    "credential_data": {
-      "signature": "0x7e6884b93962258799b5a74bbb44a1c7b0ae49ceaee0209c4383850b0ca6cd580052889ba35b541e1c9f2bfcbff649e210d8c012f81e55fdf5003473006ba6821c",
+      "signature": "MEQCIFofJWsqFQg-dS9zhTdf-OMIQ9sX3Gld2f_RxEeuLRWpAiBHgXaC-7awLszXBlwfSL3WNGTaDlM_rfyOWi5_wDbugQ==",
       "client_data_json": "eyJ0eXBlIjoid2ViYXV0aG4uZ2V0IiwiY2hhbGxlbmdlIjoiQVFBQUFBQUFBUDBNRmZ6THFnRDZmcHVxV05FMU02dkVhd09BU   0hhX284aDNOQ0l1RFU3SCIsIm9yaWdpbiI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsImNyb3NzT3JpZ2luIjpmYWxzZX0=",
       "authenticator_data": "SZYN5YgOjGh0NBcPZHZgW4_krrmihjLHmVzzuoMdl2MdAAAAAA=="
    }
