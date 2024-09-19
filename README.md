@@ -394,8 +394,7 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
           "signature": "MEQCIFofJWsqFQg-dS9zhTdf-OMIQ9sX3Gld2f_RxEeuLRWpAiBHgXaC-7awLszXBlwfSL3WNGTaDlM_rfyOWi5_wDbugQ==",
           "user_handle": "eWo="
         }
-      }
-   ```
+      }```
 
 <br/>
 
