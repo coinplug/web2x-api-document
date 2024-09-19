@@ -210,7 +210,7 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
 
    <br/>
 
-   - **EoA 키**
+   **EoA 키**
 
    - EoA(Externally Owned Account) 키는 이더리움 블록체인 기술에서 사용되는 암호키의 유형입니다. 이 키는 사용자가 자신의 자산을 안전하게 보호하고 관리하기 위해 필요한 서명과 검증을 위해 생성됩니다.
    - 공개키 암호화에서 사용되는 EoA 키는 공개키(public key)와 개인키(private key)로 구성됩니다. 공개키는 다른 사용자들과 공유되어 계정의 식별자 역할을 하며, 개인키는 사용자가 자신의 자산을 관리하고 트랜잭션을 서명하는 데 사용됩니다. 이 키는 절대적으로 비밀로 유지되어야 하며, 타인에게 노출되면 보안에 심각한 위협이 될 수 있습니다.
@@ -256,7 +256,7 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
 
    <br/>
 
-   - **패스키 (Passkey)**
+   **패스키 (Passkey)**
 
    - 패스키(Passkey)는 웹과 모바일 애플리케이션에서 사용되는 현대적인 인증 솔루션으로, 비밀번호를 사용하지 않고 보다 안전하고 간편하게 사용자를 인증하는 방식입니다. 패스키는 FIDO(패스트 ID 온라인) 얼라이언스에서 개발한 WebAuthn(Web Authentication) 표준을 기반으로 하며, 사용자 인증을 위한 공통의 인터페이스를 제공합니다.
 
@@ -270,131 +270,131 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
 
       1. **패스키 생성 및 키 서명 예시코드 (Javascript)**
 
-   ```javascript
-   // 키 생성 함수
-   async function generateKey() {
-       // WebAuthn 생성 요청 설정
-       const publicKey = {
-           challenge: new Uint8Array(32), // 랜덤한 값 사용
-           rp: {
-               name: "Example Corporation",
-           },
-           user: {
-               id: new Uint8Array(16), // 고유한 사용자 ID
-               name: "user@example.com",
-               displayName: "User Example",
-           },
-           pubKeyCredParams: [
-               {
-                   type: "public-key",
-                   alg: -7, // ES256 - ECDSA with SHA-256
-               },
-           ],
-           authenticatorSelection: {
-               authenticatorAttachment: "platform",
-               requireResidentKey: false,
-               userVerification: "preferred",
-           },
-           timeout: 60000,
-           attestation: "direct",
-       };
+      ```javascript
+      // 키 생성 함수
+      async function generateKey() {
+          // WebAuthn 생성 요청 설정
+          const publicKey = {
+              challenge: new Uint8Array(32), // 랜덤한 값 사용
+              rp: {
+                  name: "Example Corporation",
+              },
+              user: {
+                  id: new Uint8Array(16), // 고유한 사용자 ID
+                  name: "user@example.com",
+                  displayName: "User Example",
+              },
+              pubKeyCredParams: [
+                  {
+                      type: "public-key",
+                      alg: -7, // ES256 - ECDSA with SHA-256
+                  },
+              ],
+              authenticatorSelection: {
+                  authenticatorAttachment: "platform",
+                  requireResidentKey: false,
+                  userVerification: "preferred",
+              },
+              timeout: 60000,
+              attestation: "direct",
+          };
    
-       try {
-           // 키 생성 요청
-           const credential = await navigator.credentials.create({
-               publicKey,
-           });
+          try {
+              // 키 생성 요청
+              const credential = await navigator.credentials.create({
+                  publicKey,
+              });
    
-           console.log("Public Key Credential:", credential);
-           return credential;
-       } catch (err) {
-           console.error("Error during key generation:", err);
-       }
-   }
+              console.log("Public Key Credential:", credential);
+              return credential;
+          } catch (err) {
+              console.error("Error during key generation:", err);
+          }
+      }
    
-   // 16진수 변환 함수
-   function toHexString(byteArray) {
-       return Array.from(byteArray)
-           .map((byte) => byte.toString(16).padStart(2, '0'))
-           .join('');
-   }
+      // 16진수 변환 함수
+      function toHexString(byteArray) {
+          return Array.from(byteArray)
+              .map((byte) => byte.toString(16).padStart(2, '0'))
+              .join('');
+      }
    
-   // 메시지 서명 함수
-   async function signChallenge(credential, challenge) {
-       // 주어진 해시된 challenge를 사용하여 서명
-       const publicKey = {
-           challenge: challenge, 
-           allowCredentials: [
-               {
-                   type: "public-key",
-                   id: credential.rawId, // 생성된 키의 ID
-               },
-           ],
-           userVerification: "preferred",
-       };
+      // 메시지 서명 함수
+      async function signChallenge(credential, challenge) {
+          // 주어진 해시된 challenge를 사용하여 서명
+          const publicKey = {
+              challenge: challenge, 
+              allowCredentials: [
+                  {
+                      type: "public-key",
+                      id: credential.rawId, // 생성된 키의 ID
+                  },
+              ],
+              userVerification: "preferred",
+          };
    
-       try {
-           // 서명 요청
-           const assertion = await navigator.credentials.get({
-               publicKey,
-           });
+          try {
+              // 서명 요청
+              const assertion = await navigator.credentials.get({
+                  publicKey,
+              });
    
-           console.log("Assertion:", assertion);
+              console.log("Assertion:", assertion);
    
-           // assertion.response.signature에 서명된 challenge가 포함됨
-           const signature = new Uint8Array(assertion.response.signature);
+              // assertion.response.signature에 서명된 challenge가 포함됨
+              const signature = new Uint8Array(assertion.response.signature);
    
-           // 서명된 챌린지와 서명 결과를 16진수로 출력
-           console.log("Signed Challenge (Hex):", toHexString(challenge));
+              // 서명된 챌린지와 서명 결과를 16진수로 출력
+              console.log("Signed Challenge (Hex):", toHexString(challenge));
            
-       } catch (err) {
-           console.error("Error during message signing:", err);
-       }
-   }
+          } catch (err) {
+              console.error("Error during message signing:", err);
+          }
+      }
    
-   // 사용 예시
-   (async () => {
-       const credential = await generateKey();
-       if (credential) {
-           // WEB2X의 챌린지 API 응답 내 challenge 데이터 입력 (예시)
-           const challenge = "0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8"
-           await signChallenge(credential, challenge);
-       }
-   })();
-   ```
+      // 사용 예시
+      (async () => {
+          const credential = await generateKey();
+          if (credential) {
+              // WEB2X의 챌린지 API 응답 내 challenge 데이터 입력 (예시)
+              const challenge = "0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8"
+              await signChallenge(credential, challenge);
+          }
+      })();
+      ```
    
-   **패스키 생성 예시결과**
-   - 패스키 생성 시 아래 JSON 형태의 결과를 확인할 수 있습니다. WEB2X 서비스에서는 결과 데이터 내 public_key 필드의 데이터를 지갑생성 챌린지 API 내 공개키 파라미터로 사용합니다. id 값 또한 서명 시 필요하므로 별도 기록이 필요합니다. 
-   ```json
-   {
-     "id": "-NywVTlXUEoqd5HOrCfJf58t59E",
-     "response": {
-       "authenticator_data": "...",
-       "client_data_json": "...",
-       "transports": [],
-       "public_key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAElEitAxLGEpsEK2MQaU3t8RFR0NEBJqBWnQDFoJHIlgzgNdt0C1-2biJsZCwS9u-5qD-   Pr7wcIy8UYfWOmu1LKA==",
-       "public_key_algorithm": -7
-     },
-     "type": "public-key"
-   }
-   ```
+   2. **패스키 생성 예시결과**
+      - 패스키 생성 시 아래 JSON 형태의 결과를 확인할 수 있습니다. WEB2X 서비스에서는 결과 데이터 내 public_key 필드의 데이터를 지갑생성 챌린지 API 내 공개키 파라미터로 사용합니다. id 값 또한 서명 시 필요하므로 별도 기록이 필요합니다. 
+      ```json
+      {
+        "id": "-NywVTlXUEoqd5HOrCfJf58t59E",
+        "response": {
+          "authenticator_data": "...",
+          "client_data_json": "...",
+          "transports": [],
+          "public_key": "MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAElEitAxLGEpsEK2MQaU3t8RFR0NEBJqBWnQDFoJHIlgzgNdt0C1-2biJsZCwS9u-5qD-   Pr7wcIy8UYfWOmu1LKA==",
+          "public_key_algorithm": -7
+        },
+        "type": "public-key"
+      }
+      ```
+   
 
-
-   **패스키 서명 예시결과**
+   3. **패스키 서명 예시결과**
    - 패스키 서명 시 아래 JSON 형태의 결과를 확인할 수 있습니다. WEB2X 서비스에서는 결과 데이터 내 client_data_json, authenticator_data, signature 필드의 데이터를 요청 API 파라미터 내 서명값으로 사용합니다.
-
-   ```json
-   {
-     "id": "nBmYEcBy5xupLjRGdti7FprUaF0",
-     "type": "public-key",
-     "authenticator_attachment": "platform",
-     "response": {
-       "client_data_json": "eyJ0eXBlIjoid2ViYXV0aG4uZ2V0IiwiY2hhbGxlbmdlIjoiQVFBQUFBQUFBUDBNRmZ6THFnRDZmcHVxV05FMU02dkVhd09BU   0hhX284aDNOQ0l1RFU3SCIsIm9yaWdpbiI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsImNyb3NzT3JpZ2luIjpmYWxzZX0=",
-       "authenticator_data": "SZYN5YgOjGh0NBcPZHZgW4_krrmihjLHmVzzuoMdl2MdAAAAAA==",
-       "signature": "MEQCIFofJWsqFQg-dS9zhTdf-OMIQ9sX3Gld2f_RxEeuLRWpAiBHgXaC-7awLszXBlwfSL3WNGTaDlM_rfyOWi5_wDbugQ==",
-       "user_handle": "eWo="
-     }
-   }
+   
+      ```json
+      {
+        "id": "nBmYEcBy5xupLjRGdti7FprUaF0",
+        "type": "public-key",
+        "authenticator_attachment": "platform",
+        "response": {
+          "client_data_json": "eyJ0eXBlIjoid2ViYXV0aG4uZ2V0IiwiY2hhbGxlbmdlIjoiQVFBQUFBQUFBUDBNRmZ6THFnRDZmcHVxV05FMU02dkVhd09BU   0hhX284aDNOQ0l1RFU3SCIsIm9yaWdpbiI6Imh0dHA6Ly9sb2NhbGhvc3Q6MzAwMCIsImNyb3NzT3JpZ2luIjpmYWxzZX0=",
+          "authenticator_data": "SZYN5YgOjGh0NBcPZHZgW4_krrmihjLHmVzzuoMdl2MdAAAAAA==",
+          "signature": "MEQCIFofJWsqFQg-dS9zhTdf-OMIQ9sX3Gld2f_RxEeuLRWpAiBHgXaC-7awLszXBlwfSL3WNGTaDlM_rfyOWi5_wDbugQ==",
+          "user_handle": "eWo="
+        }
+      }
    ```
 4. WEB2X API 호출 시 서명 값 사용 방법
 
