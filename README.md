@@ -210,7 +210,7 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
 
    <br/>
 
-   **EoA 키**
+   - **EoA 키**
 
    - EoA(Externally Owned Account) 키는 이더리움 블록체인 기술에서 사용되는 암호키의 유형입니다. 이 키는 사용자가 자신의 자산을 안전하게 보호하고 관리하기 위해 필요한 서명과 검증을 위해 생성됩니다.
    - 공개키 암호화에서 사용되는 EoA 키는 공개키(public key)와 개인키(private key)로 구성됩니다. 공개키는 다른 사용자들과 공유되어 계정의 식별자 역할을 하며, 개인키는 사용자가 자신의 자산을 관리하고 트랜잭션을 서명하는 데 사용됩니다. 이 키는 절대적으로 비밀로 유지되어야 하며, 타인에게 노출되면 보안에 심각한 위협이 될 수 있습니다.
@@ -218,43 +218,45 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
 
    <br/>
 
-   **EoA 키 생성 및 키 서명 예시코드 (Java)**
+      1. **EoA 키 생성 및 키 서명 예시코드 (Java)**
 
-   ```java
-   import org.web3j.crypto.*;
-   import org.web3j.utils.Numeric;
+      ```java
+      import org.web3j.crypto.*;
+      import org.web3j.utils.Numeric;
 
-   ...
+      ...
 
-   // 키 생성
-   ECKeyPair keyPair = Keys.createEcKeyPair();
-   Credentials credentials = Credentials.create(keyPair);
-   System.out.println("Private Key: " + credentials.getEcKeyPair().getPrivateKey().toString(16));
-   System.out.println("Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
+      // 키 생성
+      ECKeyPair keyPair = Keys.createEcKeyPair();
+      Credentials credentials = Credentials.create(keyPair);
+      System.out.println("Private Key: " + credentials.getEcKeyPair().getPrivateKey().toString(16));
+      System.out.println("Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
 
-   // 서명할 메시지인 챌린지 값 입력
-   String challenge = "0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8"
-   byte[] messageHash = Numeric.hexStringToByteArray(challenge)
+      // 서명할 메시지인 챌린지 값 입력
+      String challenge = "0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8"
+      byte[] messageHash = Numeric.hexStringToByteArray(challenge)
    
 
-   // 서명
-   Sign.SignatureData signatureData = Sign.signPrefixedMessage(messageHash, keyPair);
-   String signature = Numeric.toHexString(signatureData.getR()) +
-         Numeric.toHexString(signatureData.getS()).substring(2) +
-         Numeric.toHexString(signatureData.getV()).substring(2);
-   System.out.println("Signature: " + signature);
+      // 서명
+      Sign.SignatureData signatureData = Sign.signPrefixedMessage(messageHash, keyPair);
+      String signature = Numeric.toHexString(signatureData.getR()) +
+            Numeric.toHexString(signatureData.getS()).substring(2) +
+            Numeric.toHexString(signatureData.getV()).substring(2);
+      System.out.println("Signature: " + signature);
+   
+      // 서명 검증
+      BigInteger publicKey = Sign.signedMessageToKey(messageHash, signatureData);
+      System.out.println("Recovered Public Key: " + publicKey.toString(16));
+      System.out.println("Original Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
+      System.out.println("Signature Verification Result: " + publicKey.equals(credentials.getEcKeyPair().getPublicKey()));
+   
+      ...
 
-   // 서명 검증
-   BigInteger publicKey = Sign.signedMessageToKey(messageHash, signatureData);
-   System.out.println("Recovered Public Key: " + publicKey.toString(16));
-   System.out.println("Original Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
-   System.out.println("Signature Verification Result: " + publicKey.equals(credentials.getEcKeyPair().getPublicKey()));
+      ```
 
-   ...
+   <br/>
 
-   ```
-
-    **패스키 (Passkey)**
+   - **패스키 (Passkey)**
 
    - 패스키(Passkey)는 웹과 모바일 애플리케이션에서 사용되는 현대적인 인증 솔루션으로, 비밀번호를 사용하지 않고 보다 안전하고 간편하게 사용자를 인증하는 방식입니다. 패스키는 FIDO(패스트 ID 온라인) 얼라이언스에서 개발한 WebAuthn(Web Authentication) 표준을 기반으로 하며, 사용자 인증을 위한 공통의 인터페이스를 제공합니다.
 
@@ -263,8 +265,10 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
    - 패스키는 사용자 경험을 크게 개선합니다. 사용자는 복잡한 비밀번호를 기억할 필요가 없고, 비밀번호 재설정이나 피싱 공격에 대한 걱정 없이 안전하게 로그인을 수행할 수 있습니다. 또한, 패스키는 멀티 기기 환경에서도 원활히 작동하며, 사용자의 기기 간 동기화가 가능합니다.
 
    - 패스키는 WebAuthn 표준을 따르며, ECDSA(타원 곡선 디지털 서명 알고리즘)를 사용하여 보안을 제공합니다. WebAuthn에서는 NIST 표준에 따라 P-256(secp256r1) 커브를 사용하며 패스키의 공개키는 일반적으로 압축된(compressed) 형식의 약 33 바이트의 길이를 갖습니다. WEB2X 서비스에서 사용되는 공개키는 표준 Base64 인코딩을 통해 문자열로 표현됩니다. Base64 인코딩은 바이너리 데이터를 텍스트로 변환하여, 전송 및 저장이 용이하도록 돕습니다. Base64로 인코딩된 공개키는 길이가 인코딩된 바이트 수에 따라 달라지며, 패딩 문자 =를 포함할 수 있습니다.
+   
+   <br/>
 
-   **패스키 생성 및 키 서명 예시코드 (Javascript)**
+      1. **패스키 생성 및 키 서명 예시코드 (Javascript)**
 
    ```javascript
    // 키 생성 함수
@@ -392,7 +396,7 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
      }
    }
    ```
-3. WEB2X API 호출 시 서명 값 사용 방법
+4. WEB2X API 호출 시 서명 값 사용 방법
 
    eoakey 혹은 패스키를 이용하여 서명을 완료한 뒤 생성된 서명 값은 아래 코드와 같이 WEB2X 요청 API 호출 시에 사용할 수 있습니다. 
 
