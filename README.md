@@ -220,39 +220,39 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
 
       1. **EoA 키 생성 및 키 서명 예시코드 (Java)**
 
-      ```java
-      import org.web3j.crypto.*;
-      import org.web3j.utils.Numeric;
-
-      ...
-
-      // 키 생성
-      ECKeyPair keyPair = Keys.createEcKeyPair();
-      Credentials credentials = Credentials.create(keyPair);
-      System.out.println("Private Key: " + credentials.getEcKeyPair().getPrivateKey().toString(16));
-      System.out.println("Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
-
-      // 서명할 메시지인 챌린지 값 입력
-      String challenge = "0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8"
-      byte[] messageHash = Numeric.hexStringToByteArray(challenge)
+         ```java
+         import org.web3j.crypto.*;
+         import org.web3j.utils.Numeric;
    
-
-      // 서명
-      Sign.SignatureData signatureData = Sign.signPrefixedMessage(messageHash, keyPair);
-      String signature = Numeric.toHexString(signatureData.getR()) +
-            Numeric.toHexString(signatureData.getS()).substring(2) +
-            Numeric.toHexString(signatureData.getV()).substring(2);
-      System.out.println("Signature: " + signature);
+         ...
    
-      // 서명 검증
-      BigInteger publicKey = Sign.signedMessageToKey(messageHash, signatureData);
-      System.out.println("Recovered Public Key: " + publicKey.toString(16));
-      System.out.println("Original Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
-      System.out.println("Signature Verification Result: " + publicKey.equals(credentials.getEcKeyPair().getPublicKey()));
+         // 키 생성
+         ECKeyPair keyPair = Keys.createEcKeyPair();
+         Credentials credentials = Credentials.create(keyPair);
+         System.out.println("Private Key: " + credentials.getEcKeyPair().getPrivateKey().toString(16));
+         System.out.println("Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
    
-      ...
-
-      ```
+         // 서명할 메시지인 챌린지 값 입력
+         String challenge = "0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8"
+         byte[] messageHash = Numeric.hexStringToByteArray(challenge)
+      
+   
+         // 서명
+         Sign.SignatureData signatureData = Sign.signPrefixedMessage(messageHash, keyPair);
+         String signature = Numeric.toHexString(signatureData.getR()) +
+               Numeric.toHexString(signatureData.getS()).substring(2) +
+               Numeric.toHexString(signatureData.getV()).substring(2);
+         System.out.println("Signature: " + signature);
+      
+         // 서명 검증
+         BigInteger publicKey = Sign.signedMessageToKey(messageHash, signatureData);
+         System.out.println("Recovered Public Key: " + publicKey.toString(16));
+         System.out.println("Original Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
+         System.out.println("Signature Verification Result: " + publicKey.equals(credentials.getEcKeyPair().getPublicKey()));
+      
+         ...
+   
+         ```
 
    <br/>
 
