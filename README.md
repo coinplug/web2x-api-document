@@ -210,160 +210,160 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
 
    <br/>
 
-   **EoA 키**
+   - **EoA 키**
 
-   - EoA(Externally Owned Account) 키는 이더리움 블록체인 기술에서 사용되는 암호키의 유형입니다. 이 키는 사용자가 자신의 자산을 안전하게 보호하고 관리하기 위해 필요한 서명과 검증을 위해 생성됩니다.
-   - 공개키 암호화에서 사용되는 EoA 키는 공개키(public key)와 개인키(private key)로 구성됩니다. 공개키는 다른 사용자들과 공유되어 계정의 식별자 역할을 하며, 개인키는 사용자가 자신의 자산을 관리하고 트랜잭션을 서명하는 데 사용됩니다. 이 키는 절대적으로 비밀로 유지되어야 하며, 타인에게 노출되면 보안에 심각한 위협이 될 수 있습니다.
-   - EoA 키는 ECDSA(타원 곡선 디지털 서명 알고리즘)을 기반으로 생성됩니다. WEB2X API에서는 압축되지 않은(uncompressed) 공개키를 사용하며, 이는 128 글자(64 바이트)의 길이를 갖습니다.
+     - EoA(Externally Owned Account) 키는 이더리움 블록체인 기술에서 사용되는 암호키의 유형입니다. 이 키는 사용자가 자신의 자산을 안전하게 보호하고 관리하기 위해 필요한 서명과 검증을 위해 생성됩니다.
+     - 공개키 암호화에서 사용되는 EoA 키는 공개키(public key)와 개인키(private key)로 구성됩니다. 공개키는 다른 사용자들과 공유되어 계정의 식별자 역할을 하며, 개인키는 사용자가 자신의 자산을 관리하고 트랜잭션을 서명하는 데 사용됩니다. 이 키는 절대적으로 비밀로 유지되어야 하며, 타인에게 노출되면 보안에 심각한 위협이 될 수 있습니다.
+     - EoA 키는 ECDSA(타원 곡선 디지털 서명 알고리즘)을 기반으로 생성됩니다. WEB2X API에서는 압축되지 않은(uncompressed) 공개키를 사용하며, 이는 128 글자(64 바이트)의 길이를 갖습니다.
 
-   <br/>
+     <br/>
 
-      1. **EoA 키 생성 및 키 서명 예시코드 (Java)**
+     **EoA 키 생성 및 키 서명 예시코드 (Java)**
 
-         ```java
-         import org.web3j.crypto.*;
-         import org.web3j.utils.Numeric;
+     ```java
+     import org.web3j.crypto.*;
+     import org.web3j.utils.Numeric;
    
-         ...
+     ...
    
-         // 키 생성
-         ECKeyPair keyPair = Keys.createEcKeyPair();
-         Credentials credentials = Credentials.create(keyPair);
-         System.out.println("Private Key: " + credentials.getEcKeyPair().getPrivateKey().toString(16));
-         System.out.println("Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
+     // 키 생성
+     ECKeyPair keyPair = Keys.createEcKeyPair();
+     Credentials credentials = Credentials.create(keyPair);
+     System.out.println("Private Key: " + credentials.getEcKeyPair().getPrivateKey().toString(16));
+     System.out.println("Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
    
-         // 서명할 메시지인 챌린지 값 입력
-         String challenge = "0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8"
-         byte[] messageHash = Numeric.hexStringToByteArray(challenge)
-      
+     // 서명할 메시지인 챌린지 값 입력
+     String challenge = "0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8"
+     byte[] messageHash = Numeric.hexStringToByteArray(challenge)
    
-         // 서명
-         Sign.SignatureData signatureData = Sign.signPrefixedMessage(messageHash, keyPair);
-         String signature = Numeric.toHexString(signatureData.getR()) +
-               Numeric.toHexString(signatureData.getS()).substring(2) +
-               Numeric.toHexString(signatureData.getV()).substring(2);
-         System.out.println("Signature: " + signature);
-      
-         // 서명 검증
-         BigInteger publicKey = Sign.signedMessageToKey(messageHash, signatureData);
-         System.out.println("Recovered Public Key: " + publicKey.toString(16));
-         System.out.println("Original Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
-         System.out.println("Signature Verification Result: " + publicKey.equals(credentials.getEcKeyPair().getPublicKey()));
-      
-         ...
    
-         ```
-
-   <br/>
-
-   **패스키 (Passkey)**
-
-   - 패스키(Passkey)는 웹과 모바일 애플리케이션에서 사용되는 현대적인 인증 솔루션으로, 비밀번호를 사용하지 않고 보다 안전하고 간편하게 사용자를 인증하는 방식입니다. 패스키는 FIDO(패스트 ID 온라인) 얼라이언스에서 개발한 WebAuthn(Web Authentication) 표준을 기반으로 하며, 사용자 인증을 위한 공통의 인터페이스를 제공합니다.
-
-   - 패스키는 공개키 암호화를 사용하여 작동하며, 사용자 장치에서 생성된 공개키(public key)와 개인키(private key) 쌍으로 구성됩니다. 사용자는 자신의 기기(스마트폰, 태블릿, 컴퓨터 등)에 패스키를 저장하고, 생체 인식(지문, 얼굴 인식) 또는 장치 PIN을 사용해 인증할 수 있습니다. 공개키는 서버에 저장되며, 개인키는 사용자의 기기에 안전하게 보관됩니다. 패스키는 사용자의 개인키를 기기 외부로 노출하지 않기 때문에 높은 보안성을 제공합니다.
-
-   - 패스키는 사용자 경험을 크게 개선합니다. 사용자는 복잡한 비밀번호를 기억할 필요가 없고, 비밀번호 재설정이나 피싱 공격에 대한 걱정 없이 안전하게 로그인을 수행할 수 있습니다. 또한, 패스키는 멀티 기기 환경에서도 원활히 작동하며, 사용자의 기기 간 동기화가 가능합니다.
-
-   - 패스키는 WebAuthn 표준을 따르며, ECDSA(타원 곡선 디지털 서명 알고리즘)를 사용하여 보안을 제공합니다. WebAuthn에서는 NIST 표준에 따라 P-256(secp256r1) 커브를 사용하며 패스키의 공개키는 일반적으로 압축된(compressed) 형식의 약 33 바이트의 길이를 갖습니다. WEB2X 서비스에서 사용되는 공개키는 표준 Base64 인코딩을 통해 문자열로 표현됩니다. Base64 인코딩은 바이너리 데이터를 텍스트로 변환하여, 전송 및 저장이 용이하도록 돕습니다. Base64로 인코딩된 공개키는 길이가 인코딩된 바이트 수에 따라 달라지며, 패딩 문자 =를 포함할 수 있습니다.
+     // 서명
+     Sign.SignatureData signatureData = Sign.signPrefixedMessage(messageHash, keyPair);
+     String signature = Numeric.toHexString(signatureData.getR()) +
+           Numeric.toHexString(signatureData.getS()).substring(2) +
+           Numeric.toHexString(signatureData.getV()).substring(2);
+     System.out.println("Signature: " + signature);
    
-   <br/>
-
-      1. **패스키 생성 및 키 서명 예시코드 (Javascript)**
-
-         ```javascript
-         // 키 생성 함수
-         async function generateKey() {
-             // WebAuthn 생성 요청 설정
-             const publicKey = {
-                 challenge: new Uint8Array(32), // 랜덤한 값 사용
-                 rp: {
-                     name: "Example Corporation",
-                 },
-                 user: {
-                     id: new Uint8Array(16), // 고유한 사용자 ID
-                     name: "user@example.com",
-                     displayName: "User Example",
-                 },
-                 pubKeyCredParams: [
-                     {
-                         type: "public-key",
-                         alg: -7, // ES256 - ECDSA with SHA-256
-                     },
-                 ],
-                 authenticatorSelection: {
-                     authenticatorAttachment: "platform",
-                     requireResidentKey: false,
-                     userVerification: "preferred",
-                 },
-                 timeout: 60000,
-                 attestation: "direct",
-             };
-      
-             try {
-                 // 키 생성 요청
-                 const credential = await navigator.credentials.create({
-                     publicKey,
-                 });
-      
-                 console.log("Public Key Credential:", credential);
-                 return credential;
-             } catch (err) {
-                 console.error("Error during key generation:", err);
-             }
-         }
-      
-         // 16진수 변환 함수
-         function toHexString(byteArray) {
-             return Array.from(byteArray)
-                 .map((byte) => byte.toString(16).padStart(2, '0'))
-                 .join('');
-         }
-      
-         // 메시지 서명 함수
-         async function signChallenge(credential, challenge) {
-             // 주어진 해시된 challenge를 사용하여 서명
-             const publicKey = {
-                 challenge: challenge, 
-                 allowCredentials: [
-                     {
-                         type: "public-key",
-                         id: credential.rawId, // 생성된 키의 ID
-                     },
-                 ],
-                 userVerification: "preferred",
-             };
-      
-             try {
-                 // 서명 요청
-                 const assertion = await navigator.credentials.get({
-                     publicKey,
-                 });
-      
-                 console.log("Assertion:", assertion);
-      
-                 // assertion.response.signature에 서명된 challenge가 포함됨
-                 const signature = new Uint8Array(assertion.response.signature);
-      
-                 // 서명된 챌린지와 서명 결과를 16진수로 출력
-                 console.log("Signed Challenge (Hex):", toHexString(challenge));
-              
-             } catch (err) {
-                 console.error("Error during message signing:", err);
-             }
-         }
-      
-         // 사용 예시
-         (async () => {
-             const credential = await generateKey();
-             if (credential) {
-                 // WEB2X의 챌린지 API 응답 내 challenge 데이터 입력 (예시)
-                 const challenge = "0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8"
-                 await signChallenge(credential, challenge);
-             }
-         })();
-         ```
+     // 서명 검증
+     BigInteger publicKey = Sign.signedMessageToKey(messageHash, signatureData);
+     System.out.println("Recovered Public Key: " + publicKey.toString(16));
+     System.out.println("Original Public Key: " + credentials.getEcKeyPair().getPublicKey().toString(16));
+     System.out.println("Signature Verification Result: " + publicKey.equals(credentials.getEcKeyPair().getPublicKey()));
    
-   2. **패스키 생성 예시결과**
+     ...
+   
+     ```
+   
+     <br/>
+
+   - **패스키 (Passkey)**
+
+      - 패스키(Passkey)는 웹과 모바일 애플리케이션에서 사용되는 현대적인 인증 솔루션으로, 비밀번호를 사용하지 않고 보다 안전하고 간편하게 사용자를 인증하는 방식입니다. 패스키는 FIDO(패스트 ID 온라인) 얼라이언스에서 개발한 WebAuthn(Web Authentication) 표준을 기반으로 하며, 사용자 인증을 위한 공통의 인터페이스를 제공합니다.
+   
+      - 패스키는 공개키 암호화를 사용하여 작동하며, 사용자 장치에서 생성된 공개키(public key)와 개인키(private key) 쌍으로 구성됩니다. 사용자는 자신의 기기(스마트폰, 태블릿, 컴퓨터 등)에 패스키를 저장하고, 생체 인식(지문, 얼굴 인식) 또는 장치 PIN을 사용해 인증할 수 있습니다. 공개키는 서버에 저장되며, 개인키는 사용자의 기기에 안전하게 보관됩니다. 패스키는 사용자의 개인키를 기기 외부로 노출하지 않기 때문에 높은 보안성을 제공합니다.
+   
+      - 패스키는 사용자 경험을 크게 개선합니다. 사용자는 복잡한 비밀번호를 기억할 필요가 없고, 비밀번호 재설정이나 피싱 공격에 대한 걱정 없이 안전하게 로그인을 수행할 수 있습니다. 또한, 패스키는 멀티 기기 환경에서도 원활히 작동하며, 사용자의 기기 간 동기화가 가능합니다.
+   
+      - 패스키는 WebAuthn 표준을 따르며, ECDSA(타원 곡선 디지털 서명 알고리즘)를 사용하여 보안을 제공합니다. WebAuthn에서는 NIST 표준에 따라 P-256(secp256r1) 커브를 사용하며 패스키의 공개키는 일반적으로 압축된(compressed) 형식의 약 33 바이트의 길이를 갖습니다. WEB2X 서비스에서 사용되는 공개키는 표준 Base64 인코딩을 통해 문자열로 표현됩니다. Base64 인코딩은 바이너리 데이터를 텍스트로 변환하여, 전송 및 저장이 용이하도록 돕습니다. Base64로 인코딩된 공개키는 길이가 인코딩된 바이트 수에 따라 달라지며, 패딩 문자 =를 포함할 수 있습니다.
+   
+      <br/>
+
+      **패스키 생성 및 키 서명 예시코드 (Javascript)**
+
+      ```javascript
+      // 키 생성 함수
+      async function generateKey() {
+          // WebAuthn 생성 요청 설정
+          const publicKey = {
+              challenge: new Uint8Array(32), // 랜덤한 값 사용
+              rp: {
+                  name: "Example Corporation",
+              },
+              user: {
+                  id: new Uint8Array(16), // 고유한 사용자 ID
+                  name: "user@example.com",
+                  displayName: "User Example",
+              },
+              pubKeyCredParams: [
+                  {
+                      type: "public-key",
+                      alg: -7, // ES256 - ECDSA with SHA-256
+                  },
+              ],
+              authenticatorSelection: {
+                  authenticatorAttachment: "platform",
+                  requireResidentKey: false,
+                  userVerification: "preferred",
+              },
+              timeout: 60000,
+              attestation: "direct",
+          };
+   
+          try {
+              // 키 생성 요청
+              const credential = await navigator.credentials.create({
+                  publicKey,
+              });
+   
+              console.log("Public Key Credential:", credential);
+              return credential;
+          } catch (err) {
+              console.error("Error during key generation:", err);
+          }
+      }
+   
+      // 16진수 변환 함수
+      function toHexString(byteArray) {
+          return Array.from(byteArray)
+              .map((byte) => byte.toString(16).padStart(2, '0'))
+              .join('');
+      }
+   
+      // 메시지 서명 함수
+      async function signChallenge(credential, challenge) {
+          // 주어진 해시된 challenge를 사용하여 서명
+          const publicKey = {
+              challenge: challenge, 
+              allowCredentials: [
+                  {
+                      type: "public-key",
+                      id: credential.rawId, // 생성된 키의 ID
+                  },
+              ],
+              userVerification: "preferred",
+          };
+   
+          try {
+              // 서명 요청
+              const assertion = await navigator.credentials.get({
+                  publicKey,
+              });
+   
+              console.log("Assertion:", assertion);
+   
+              // assertion.response.signature에 서명된 challenge가 포함됨
+              const signature = new Uint8Array(assertion.response.signature);
+   
+              // 서명된 챌린지와 서명 결과를 16진수로 출력
+              console.log("Signed Challenge (Hex):", toHexString(challenge));
+           
+          } catch (err) {
+              console.error("Error during message signing:", err);
+          }
+      }
+   
+      // 사용 예시
+      (async () => {
+          const credential = await generateKey();
+          if (credential) {
+              // WEB2X의 챌린지 API 응답 내 challenge 데이터 입력 (예시)
+              const challenge = "0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8"
+              await signChallenge(credential, challenge);
+          }
+      })();
+      ```
+   
+      **패스키 생성 예시결과**
       - 패스키 생성 시 아래 JSON 형태의 결과를 확인할 수 있습니다. WEB2X 서비스에서는 결과 데이터 내 public_key 필드의 데이터를 지갑생성 챌린지 API 내 공개키 파라미터로 사용합니다. id 값 또한 서명 시 필요하므로 별도 기록이 필요합니다. 
       ```json
       {
@@ -379,9 +379,8 @@ AA 지갑은 트랜잭션을 보낼 때 지정된 개인키로 서명하는 기�
       }
       ```
    
-
-   3. **패스키 서명 예시결과**
-   - 패스키 서명 시 아래 JSON 형태의 결과를 확인할 수 있습니다. WEB2X 서비스에서는 결과 데이터 내 client_data_json, authenticator_data, signature 필드의 데이터를 요청 API 파라미터 내 서명값으로 사용합니다.
+      **패스키 서명 예시결과**
+      - 패스키 서명 시 아래 JSON 형태의 결과를 확인할 수 있습니다. WEB2X 서비스에서는 결과 데이터 내 client_data_json, authenticator_data, signature 필드의 데이터를 요청 API 파라미터 내 서명값으로 사용합니다.
    
       ```json
       {
