@@ -6,11 +6,13 @@ API를 기반으로 쉽게 사용하듯이, WEB2X API 또한 HTTP API를 이용�
 <br/>
 
 ### 쉽고 빠른 블록체인 연동!
-<b> 지갑 생성 </b>
-![](https://github.com/coinplug/web2x-api-document/raw/master/images/3-1.mp4)
-<b> 상품 제작 </b>
+<b> 지갑 생성 </b><br>
+<video src="https://github.com/coinplug/web2x-api-document/raw/master/images/3-1.mp4" autoplay controls>
+</video>
+
+<b> 상품 제작 </b><br>
 ![](https://github.com/coinplug/web2x-api-document/raw/master/images/3-2.mp4)
-보시는 그대로, 이 영상이 WEB2X API를 통한 블록체인 연결의 전부입니다.
+<br> 보시는 그대로, 이 영상이 WEB2X API를 통한 블록체인 연결의 전부입니다.
 
 복잡한 과정 없이 쉽고 빠르게!
 
