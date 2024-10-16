@@ -3,7 +3,7 @@
 WEB2X API는 웹2 개발자가 웹3 기술을 쉽게 사용할 수 있도록 도와주는 기술입니다. 기존의 여러 API 서비스들을 HTTP
 API를 기반으로 쉽게 사용하듯이, WEB2X API 또한 HTTP API를 이용하여 간단히 사용할 수 있습니다.
 
-이 API 문서는 개발자가 WEB2X API를 사용하는 데 필요한 모든 기술 문서가 포함하고 있습니다. WEB2X API에 관해 더
+이 API 문서는 개발자가 WEB2X API를 사용하는 데 필요한 모든 기술 문서를 포함하고 있습니다. WEB2X API에 관해 더
 궁금한 점이 있으시면 ‘[문의하기](https://forms.gle/AYBw8P7V5oeVsgVg6)'를 통해 문의해주시기 바랍니다.
 
 ## WEB2X API
