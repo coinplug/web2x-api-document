@@ -14,8 +14,10 @@ API를 기반으로 쉽게 사용하듯이, WEB2X API 또한 HTTP API를 이용�
 보시는 그대로, 이 영상이 WEB2X API를 통한 블록체인 연결의 전부입니다.
 
 복잡한 과정 없이 쉽고 빠르게!
+
+
 <details>
-   <summary><b>EOA 키 생성</b></summary>
+   <summary><b> EOA 키 생성 </b></summary>
    <div>
       <p> &nbsp; <a href="https://www.rfctools.com/ethereum-address-test-tool/"> EOA 키 생성 사이트</a>에서 EOA 키를 생성합니다. </p>
       1. Rand 버튼을 클릭하여 private 키 확인
@@ -23,12 +25,13 @@ API를 기반으로 쉽게 사용하듯이, WEB2X API 또한 HTTP API를 이용�
       *관리키와 서명키 두 개가 필요합니다. 두 키 모두 private, public key를 확인 후 따로 저장해주세요.
    </div>
 </details>
+
 <details>
-   <summary><b>챌린지 서명</b></summary>
+   <summary><b> 챌린지 서명 </b></summary>
    <div>
       <p> &nbsp; <a href="https://playcode.io/javascript"> EOA 키 서명 사이트 </a>에서 챌린지에 서명합니다. </p>
       1. 코드 입력
-         <code>
+      
             const { ethers } = require('ethers');
             // 메시지를 서명하는 함수
             async function signMessage(challenge, privateKey) {
@@ -46,13 +49,14 @@ API를 기반으로 쉽게 사용하듯이, WEB2X API 또한 HTTP API를 이용�
             }).catch((error) => {
                console.error('Error signing message:', error);
             });
-         </code>
+        
       2. private key와 챌린지값 기입
       3. 우측 하단 Install module 버튼 클릭
       4. 좌측 하단 서명값 확인
       *관리키와 서명키 두 개가 필요합니다. 두 키 모두 private, public key를 확인 후 따로 저장해주세요.
    </div>
 </details>
+
 *멤버십 외 다른 상품들 또한 이처럼 간단하게 제작할 수 있습니다.
 
 <br/>
