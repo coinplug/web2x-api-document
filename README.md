@@ -22,8 +22,8 @@ API를 기반으로 쉽게 사용하듯이, WEB2X API 또한 HTTP API를 이용�
    <summary><b> EOA 키 생성 </b></summary>
    <div>
       <p> &nbsp; <a href="https://www.rfctools.com/ethereum-address-test-tool/">EOA 키 생성 사이트</a>에서 EOA 키를 생성합니다. </p>
-      1. Rand 버튼을 클릭하여 private 키 확인
-      2. Calculate public key 버튼을 클릭하여 public key 확인
+      1. Rand 버튼을 클릭하여 private 키 확인 <br/>
+      2. Calculate public key 버튼을 클릭하여 public key 확인 <br/>
       *관리키와 서명키 두 개가 필요합니다. 두 키 모두 private, public key를 확인 후 따로 저장해주세요.
    </div>
 </details>
@@ -54,10 +54,9 @@ API를 기반으로 쉽게 사용하듯이, WEB2X API 또한 HTTP API를 이용�
          
    </div>
    <div>
-      2. private key와 챌린지값 기입 <br>
-      3. 우측 하단 Install module 버튼 클릭 <br>
-      4. 좌측 하단 서명값 확인 <br>
-      *관리키와 서명키 두 개가 필요합니다. 두 키 모두 private, public key를 확인 후 따로 저장해주세요.
+      2. private key와 챌린지값 기입 <br/>
+      3. 우측 하단 Install module 버튼 클릭 <br/>
+      4. 좌측 하단 서명값 확인 <br/>
 
    </div>
 </details>
