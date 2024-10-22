@@ -1,74 +1,84 @@
 ## 소개
 
-WEB2X API는 웹2 개발자가 웹3 기술을 쉽게 사용할 수 있도록 도와주는 기술입니다. 기존의 여러 API 서비스들을 HTTP
-API를 기반으로 쉽게 사용하듯이, WEB2X API 또한 HTTP API를 이용하여 간단히 사용할 수 있습니다.
+WEB2X API는 웹2 개발자가 웹3 기술을 쉽게 사용할 수 있도록 도와주는
+기술입니다. 기존의 여러 API 서비스들을 HTTP
 
-<br/>
+API를 기반으로 쉽게 사용하듯이, WEB2X API 또한 HTTP API를 이용하여 간단히
+사용할 수 있습니다.<br/><br/>
 
-### 쉽고 빠른 블록체인 연동!
-<b> 지갑 생성 </b>
-<br/><br/>
-[![](https://github.com/coinplug/web2x-api-document/raw/master/images/3-1.png)](https://www.youtube.com/watch?v=U60i3Hx9b1M)
 
-<b> 상품 제작 </b>
-<br/><br/>
-[![](https://github.com/coinplug/web2x-api-document/raw/master/images/3-2.png)](https://www.youtube.com/watch?v=ctUdoGRLKH0)
+**쉽고 빠른 블록체인 연동!**
+  
+- 지갑 생성
+  [![](https://github.com/coinplug/web2x-api-document/raw/master/images/3-1.png)](https://www.youtube.com/watch?v=U60i3Hx9b1M)
+
+- 상품 제작
+  [![](https://github.com/coinplug/web2x-api-document/raw/master/images/3-2.png)](https://www.youtube.com/watch?v=ctUdoGRLKH0)
+
+  ※ 멤버십 외 다른 상품들 또한 이처럼 간단하게 제작할 수 있습니다.
 
 
 <br> 보시는 그대로, 이 영상이 WEB2X API를 통한 블록체인 연결의 전부입니다.
-
+  
 복잡한 과정 없이 쉽고 빠르게!
+<br/><br/>
 
 
 <details>
-   <summary><b> EOA 키 생성 </b></summary>
-   <div>
-      <p> &nbsp; <a href="https://www.rfctools.com/ethereum-address-test-tool/">EOA 키 생성 사이트</a>에서 EOA 키를 생성합니다. </p>
-      1. Rand 버튼을 클릭하여 private 키 확인 <br/>
-      2. Calculate public key 버튼을 클릭하여 public key 확인 <br/>
-      *관리키와 서명키 두 개가 필요합니다. 두 키 모두 private, public key를 확인 후 따로 저장해주세요.
-   </div>
+    <summary>EOA 키 생성</summary>
+    
+&nbsp;&nbsp;&nbsp;[EOA 키 생성 사이트](https://www.rfctools.com/ethereum-address-test-tool/) 에서 EOA 키를 생성합니다.
+  
+&nbsp;&nbsp;&nbsp;(1) Rand 버튼을 클릭하여 private 키 확인
+  
+&nbsp;&nbsp;&nbsp;(2) Calculate public key 버튼을 클릭하여 public key 확인
+  
+&nbsp;&nbsp;&nbsp;※ 관리키와 서명키 두 개가 필요합니다. 두 키 모두 private, public key를 확인 후 따로 저장해주세요.
+<br/>
+<br/>    
 </details>
+
 
 <details>
-   <summary><b> 챌린지 서명 </b></summary>
-   <div>
-      <p> &nbsp; <a href="https://playcode.io/javascript"> EOA 키 서명 사이트 </a>에서 챌린지에 서명합니다. </p>
-      1. 코드 입력
-      
-         const { ethers } = require('ethers');
-         // 메시지를 서명하는 함수
-         async function signMessage(challenge, privateKey) {
-         // 프라이빗 키로 지갑 인스턴스 생성
-         const wallet = new ethers.Wallet(privateKey);
-         // 메시지 서명
-         const signature = await wallet.signMessage(ethers.getBytes(challenge));
-         return signature;
-         }
-         // 예시 사용
-         const privateKey = '578813BE9098BC1ADC0FAC0C133BCAA3E4C6DCE43D0EA3285E411886DEEB66EC'; // 프라이빗 키 입력
-         const challenge = '0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8'; // 서명할 메시지
-         signMessage(challenge, privateKey).then((signature) => {
-            console.log('Signed Message:', signature);
-         }).catch((error) => {
-            console.error('Error signing message:', error);
-         });
-         
-   </div>
-   <div>
-      2. private key와 챌린지값 기입 <br/>
-      3. 우측 하단 Install module 버튼 클릭 <br/>
-      4. 좌측 하단 서명값 확인 <br/>
+    <summary>챌린지 서명</summary>
+  
+&nbsp;&nbsp;&nbsp;[EOA 키 서명 사이트](https://playcode.io/javascript) 에서 챌린지에 서명합니다.<br/>
+  
+&nbsp;&nbsp;&nbsp;(1) 코드 입력<br/>
 
-   </div>
+  ```javascript
+    const { ethers } = require('ethers');
+    // 메시지를 서명하는 함수
+    async function signMessage(challenge, privateKey) {
+      // 프라이빗 키로 지갑 인스턴스 생성
+      const wallet = new ethers.Wallet(privateKey);
+      // 메시지 서명
+      const signature = await wallet.signMessage(ethers.getBytes(challenge));
+      return signature;
+    }
+    // 예시 사용
+    const privateKey ='578813BE9098BC1ADC0FAC0C133BCAA3E4C6DCE43D0EA3285E411886DEEB66EC';
+    // 프라이빗 키 입력
+    const challenge = '0x201850223ca06071ffb0914104ba4dbeffa51e14417aa26e036e7c8a51cd9dd8';
+    // 서명할 메시지
+    signMessage(challenge, privateKey).then((signature) => {
+      console.log('Signed Message:', signature);
+    }).catch((error) => {
+      console.error('Error signing message:', error);
+    });
+  ```
+  
+&nbsp;&nbsp;&nbsp;(2) private key와 챌린지값 기입 <br/>
+  
+&nbsp;&nbsp;&nbsp;(3) 우측 하단 Install module 버튼 클릭 <br/>
+  
+&nbsp;&nbsp;&nbsp;(4) 좌측 하단 서명값 확인 <br/>
+  
 </details>
-
-*멤버십 외 다른 상품들 또한 이처럼 간단하게 제작할 수 있습니다.
 
 <br/>
-
-이 API 문서는 개발자가 WEB2X API를 사용하는 데 필요한 모든 기술 문서를 포함하고 있습니다. WEB2X API에 관해 더
-궁금한 점이 있으시면 ‘[문의하기](https://forms.gle/AYBw8P7V5oeVsgVg6)'를 통해 문의해주시기 바랍니다.
+  
+이 API 문서는 개발자가 WEB2X API를 사용하는 데 필요한 모든 기술 문서를 포함하고 있습니다. WEB2X API에 관해 더 궁금한 점이 있으시면 '[문의하기](https://forms.gle/AYBw8P7V5oeVsgVg6)'를 통해 문의해주시기 바랍니다.
 
 
 
