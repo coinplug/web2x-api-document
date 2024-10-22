@@ -6,9 +6,11 @@ WEB2X API는 웹2 개발자가 웹3 기술을 쉽게 사용할 수 있도록 도
 **쉽고 빠른 블록체인 연동!**
   
 - 지갑 생성
+  
   [![](https://github.com/coinplug/web2x-api-document/raw/master/images/3-1.png)](https://www.youtube.com/watch?v=U60i3Hx9b1M)
 
 - 상품 제작
+  
   [![](https://github.com/coinplug/web2x-api-document/raw/master/images/3-2.png)](https://www.youtube.com/watch?v=ctUdoGRLKH0)
 
   ※ 멤버십 외 다른 상품들 또한 이처럼 간단하게 제작할 수 있습니다.
